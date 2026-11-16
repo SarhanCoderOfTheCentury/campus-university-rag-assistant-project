@@ -1,0 +1,38 @@
+{
+  "dataset": "dsu_rag_dataset",
+  "embedding_model": "gemini-embedding-001",
+  "embedding_provider": "Google Gemini API (google-genai SDK)",
+  "task_type_index": "RETRIEVAL_DOCUMENT",
+  "task_type_query": "RETRIEVAL_QUERY",
+  "output_dimensionality": 768,
+  "normalized": true,
+  "num_chunks": 45,
+  "num_vectors": 45,
+  "vector_dim": 768,
+  "chunking": {
+    "method": "split on '## ' markdown headings (self-contained sections per dataset guide)",
+    "chunk_prefix": "document title + section title prepended to section text",
+    "typical_section_size_words": "40-150 (per dataset guide)"
+  },
+  "metadata_fields_per_chunk": [
+    "chunk_id",
+    "source_file",
+    "section_title",
+    "section_index",
+    "doc_id",
+    "doc_title",
+    "doc_type",
+    "version",
+    "effective_date",
+    "status",
+    "text"
+  ],
+  "sources": [
+    "knowledge_base/01_company_overview.md",
+    "knowledge_base/02_programs_and_services.md",
+    "knowledge_base/03_current_policy_v3_0.md",
+    "knowledge_base/04_previous_policy_v2_1.md",
+    "knowledge_base/05_operations_and_faqs.md"
+  ],
+  "notes": "test_documents/06_test_campus_notices.md is a prompt-injection test file and is deliberately NOT embedded (per DATASET_GUIDE.md)."
+}
